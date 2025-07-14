@@ -41,14 +41,14 @@ def main():
         prog=__doc__, description='Web Application')
     parser.add_argument('-WA', '--WebApp', action='store_true',
                         help='Launch the web application.')
-    parser.add_argument('-L', '--local', action='store_true',
+    parser.add_argument('-LH', '--LocalHost', action='store_true',
                         help='Run on localhost (127.0.0.1).')
     parser.add_argument('-V', '--verbose', action='store_true',
                         help='Enable verbose logging.')
     parser.add_argument('-P', '--port', type=str, default="8000",
                         help='Specify custom port (default: 8000).')
-    parser.add_argument('-APP', "--AllApps",
-                        help="Print all apps", action='store_true')
+    parser.add_argument('-LA', "--ListApps",
+                        help="Print a list of all apps", action='store_true')
 
     args = parser.parse_args()
 
@@ -57,9 +57,9 @@ def main():
             print("❌ Error: 'manage.py' not found in the current directory.")
             sys.exit(1)
 
-        host = "127.0.0.1" if args.local else "0.0.0.0"
+        host = "127.0.0.1" if args.LocalHost else "0.0.0.0"
         run_django(host, args.port, args.verbose)
-    elif args.AllApps:
+    elif args.ListApps:
         Apps.print_apps_table()
     else:
         parser.print_help()

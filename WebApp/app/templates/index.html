@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>WebApp</title>
+    <link rel="stylesheet" href="{% static 'background.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts.css' %}" />
+    <style>
+        .loader1 {
+            width: 80px;
+            --b: 8px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            padding: 1px;
+            background: conic-gradient(#0000 10%, #f03355) content-box;
+            -moz-animation:
+                repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+                radial-gradient(farthest-side, #0000 calc(50% - var(--b) - 50%), #000 calc(50% - var(--b)));
+            -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+            animation: l4 1s infinite steps(10);
+        }
+
+        @keyframes l4 {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+
+
+        .loader2 {
+            width: fit-content;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 30px;
+            color: #0000;
+            background: linear-gradient(90deg, #C02942 calc(50% + 0.5ch), #000 0) right/calc(200% + 1ch) 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: l7 2s infinite steps(11);
+        }
+
+        .loader2:before {
+            content: "Loading..."
+        }
+
+        @keyframes l7 {
+            to {
+                background-position: left
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: crimson;" title="Please log in to enter the system">WebApp</h1>
+
+    <hr />
+    <div>
+        <strong>
+            <p style="font-size:medium;">This web application is designed and built to manage all kinds of servers,
+                services, devices, etc.</p>
+        </strong>
+    </div>
+    <div class="loader1"></div>
+    <div class="loader2"></div>
+</body>
+
+</html>

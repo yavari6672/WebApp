@@ -18,7 +18,7 @@ def print_apps_table():
         return
 
     headers = ["ID", "App Name", "Create Date", "Description"]
-    print('-'*30, 'all apps', '-'*30)
+    print('-'*30, 'List of all apps', '-'*30)
     print(tabulate(rows, headers=headers, tablefmt="grid"))
 
     conn.close()
