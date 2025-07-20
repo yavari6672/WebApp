@@ -1,0 +1,32 @@
+{% extends 'base_menu.html' %}
+{% block title %}
+  List of all apps
+{% endblock %}
+{% block content %}
+  <div class="container mt-3">
+    <p class="h3">List of all apps</p>
+    <hr />
+    <p class="h6">Print a list of all apps:</p>
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Creation Date</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="table-light">
+        {% for app in apps %}
+          <tr>
+            <td>{{ app.app_name }}</td>
+            <td>{{ app.create_date }}</td>
+            <td>{{ app.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+{% block footer %}
+  <p>footer</p>
+{% endblock %}
