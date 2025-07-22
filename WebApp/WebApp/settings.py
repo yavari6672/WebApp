@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-0w$-*gx&4#3o%x1siy!#gvmdmwtf!y#1b&6d-0n0bp749zkxn8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "authenticator.apps.AuthenticatorConfig",
     "app.apps.AppConfig",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'app.context_processors.common_context',
             ],
         },
     },

@@ -2,15 +2,17 @@ from django.template import loader
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import App
-
-
-def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+from datetime import datetime
+import pytz
 
 
 def index(request):
     template = loader.get_template('index.html')
+    return HttpResponse(template.render())
+
+
+def home(request):
+    template = loader.get_template('home.html')
     return HttpResponse(template.render())
 
 

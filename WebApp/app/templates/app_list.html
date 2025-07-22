@@ -19,7 +19,7 @@
         {% for app in apps %}
           <tr>
             <td>{{ app.app_name }}</td>
-            <td>{{ app.create_date }}</td>
+            <td>{{ app.create_date|date:'Y-m-d H:i:s' }}</td>
             <td>{{ app.description }}</td>
           </tr>
         {% endfor %}
@@ -28,5 +28,5 @@
   </div>
 {% endblock %}
 {% block footer %}
-  <p>footer</p>
+  <p>Number of running apps :</p>
 {% endblock %}

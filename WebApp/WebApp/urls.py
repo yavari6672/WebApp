@@ -19,5 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('app.urls')),
+    path("ssh/", include("ssh.urls")),
+    path("authenticator/", include("authenticator.urls")),
     path('admin/', admin.site.urls),
 ]
